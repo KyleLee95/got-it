@@ -1,0 +1,12 @@
+[tasks.run-server]
+command = "cargo"
+args = ["run", "--", "--env=development"]
+
+[tasks.watch]
+command = "cargo"
+args = ["watch", "-x", "run"]
+
+[tasks.test]
+command = "cargo"
+args = ["test"]
+

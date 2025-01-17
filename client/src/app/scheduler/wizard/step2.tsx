@@ -1,4 +1,3 @@
-
 import {
 	FormControl,
 	FormLabel,
@@ -20,29 +19,15 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router";
 import { useFormContext } from "react-hook-form";
 
-
+//logistics
+//date
+//earliest time
+//latest time
 const Step2 = () => {
 	const navigate = useNavigate()
 	const { control } = useFormContext()
 	return (
 		<>
-			<FormField
-				control={control}
-				name="jobName"
-				render={({ field }) => (
-					<FormItem>
-						<FormLabel>Job Name</FormLabel>
-						<FormControl>
-							<Input placeholder="Valentine's Day @ Carbone" {...field} />
-						</FormControl>
-						<FormDescription>
-							This is the name that will be displayed to you.
-						</FormDescription>
-						<FormMessage />
-					</FormItem>
-				)}
-			/>
-
 			<FormField
 				control={control}
 				name="date"

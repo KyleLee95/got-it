@@ -11,9 +11,9 @@ const Router = () => {
 		<BrowserRouter>
 			<Routes>
 				<Route element={<Layout />}>
-					<Route index element={<DashboardHome />} />
-					<Route path="/scheduler" element={<Scheduler />}>
-						<Route path="step1" element={<Step1 />} />
+					<Route handle={{ breadcrumb: "Dashboard" }} index element={<DashboardHome />} />
+					<Route handle={{ breadcrumb: "Scheduler" }} path="/scheduler" element={<Scheduler />}>
+						<Route handle={{ breadcrumb: (match) => `${match.params.step}` }} path="step1" element={<Step1 />} />
 						<Route path="step2" element={<Step2 />} />
 						<Route path="result" element={<Result />} />
 					</Route>

@@ -3,6 +3,8 @@ import { Outlet } from "react-router";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
+
+
 const formSchema = z.object({
 	jobName: z
 		.string({
@@ -10,6 +12,7 @@ const formSchema = z.object({
 		})
 		.min(2)
 		.max(50),
+	partySize: z.number().min(1).max(10).default(1),
 	date: z.date({
 		required_error: "The desired date for the reservation is required",
 	}),

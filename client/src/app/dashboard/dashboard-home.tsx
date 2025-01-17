@@ -1,5 +1,9 @@
 const DashboardHome = () => {
-  return <div className="bg-red-900">Hello world</div>;
+  return (
+    <div className="flex justify-center">
+      <div>Hello world</div>
+    </div>
+  );
 };
 
 export default DashboardHome;

@@ -4,10 +4,16 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-axum = "0.8.1"
-serde = {version="1.0.217", features=['derive']}
-serde_json = "1.0.135"
-tokio = {version="1.43.0", features=["full"]}
-tracing = "0.1.41"
-tracing-subscriber = "0.3.19"
-sqlx = {version = "0.6.3", features = ["runtime-tokio-rustls", "postgres", "macros", "time"]}
+axum = { version = "~0.8.0" } # Web framework that focuses on ergonomics and modularity.
+hyper = { version = "~1.4.1", features = ["full"] } # A fast and correct HTTP library.
+tokio = { version = "~1.39.3", features = ["full"] } # Event-driven, non-blocking I/O platform.
+tower = { version =  "~0.5.2" } # Modular reusable components for building robust clients and servers.
+serde = { version = "~1.0.217", features = ["derive"] } # A serialization/deserialization framework.
+serde_json = { version = "~1.0.134" } # Serde serialization/deserialization of JSON data.
+once_cell = { version = "~1.19.0" } # Single assignment cells and lazy values.
+base64 = { version = "~0.21.7" } # Encode and decode base64 as bytes or utf8.
+http = { version = "~1.1.0" } # Types for HTTP requests and responses.
+tracing = { version = "~0.1.41" } #  Application-level tracing for Rust.
+tracing-subscriber = { version = "~0.3.19", features = ["env-filter"] } # Utilities for `tracing` subscribers.
+
+

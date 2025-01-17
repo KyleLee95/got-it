@@ -4,7 +4,7 @@ args = ["run", "--", "--env=development"]
 
 [tasks.watch]
 command = "cargo"
-args = ["watch", "-x", "run"]
+args = ["watch", "--cwd", ".", "-x", "run"]
 
 [tasks.test]
 command = "cargo"

@@ -1,5 +1,5 @@
+'use client'
 import { Form } from "@/components/ui/form";
-import { Outlet } from "react-router";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
@@ -31,7 +31,7 @@ const formSchema = z.object({
 		.min(2)
 		.max(50),
 });
-const Scheduler = () => {
+const Scheduler = ({ children }: { children: React.ReactNode }) => {
 	// 1. Define your form.
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
@@ -60,8 +60,7 @@ const Scheduler = () => {
 							onSubmit={form.handleSubmit(onSubmit)}
 							className="m-4 flex flex-col space-y-8"
 						>
-
-							<Outlet />
+							{children}
 						</form>
 					</Form>
 				</div>

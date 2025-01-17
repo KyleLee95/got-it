@@ -139,7 +139,7 @@ pub async fn main() {
         .route("/demo.json", get(get_demo_json).put(put_demo_json));
 
     let host = [127, 0, 0, 1];
-    let port = 3000;
+    let port = 3005;
     let addr = SocketAddr::from((host, port));
     let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
     axum::serve(listener, app).await.unwrap();

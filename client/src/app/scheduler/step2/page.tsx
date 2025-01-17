@@ -1,3 +1,4 @@
+"use client"
 import {
 	FormControl,
 	FormLabel,
@@ -16,15 +17,14 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router";
 import { useFormContext } from "react-hook-form";
-
+import { useRouter } from "next/navigation";
 //logistics
 //date
 //earliest time
 //latest time
 const Step2 = () => {
-	const navigate = useNavigate()
+	const router = useRouter()
 	const { control } = useFormContext()
 	return (
 		<>
@@ -110,7 +110,7 @@ const Step2 = () => {
 				)}
 			/>
 			<Button onClick={() => {
-				navigate("/scheduler/result")
+				router.push("/scheduler/result")
 			}}>Next</Button>
 		</>)
 

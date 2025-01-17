@@ -12,7 +12,7 @@ const formSchema = z.object({
 		})
 		.min(2)
 		.max(50),
-	partySize: z.number().min(1).max(10).default(1),
+	partySize: z.string().default("1"),
 	date: z.date({
 		required_error: "The desired date for the reservation is required",
 	}),
@@ -31,7 +31,7 @@ const formSchema = z.object({
 		.min(2)
 		.max(50),
 });
-const Scheduler = ({ children }: { children: React.ReactNode }) => {
+const SchedulerLayout = ({ children }: { children: React.ReactNode }) => {
 	// 1. Define your form.
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
@@ -69,4 +69,4 @@ const Scheduler = ({ children }: { children: React.ReactNode }) => {
 	);
 };
 
-export default Scheduler;
+export default SchedulerLayout

@@ -1,3 +1,4 @@
+"use client"
 import {
 	FormControl,
 	FormLabel,
@@ -16,12 +17,10 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router";
 import { useFormContext } from "react-hook-form";
 
 
 const Result = () => {
-	const navigate = useNavigate()
 	const { getValues } = useFormContext()
 	const formRecapValues = getValues()
 	return (

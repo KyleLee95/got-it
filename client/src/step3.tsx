@@ -17,12 +17,10 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router";
 import { useFormContext } from "react-hook-form";
 
 
 const Step2 = () => {
-	const navigate = useNavigate()
 	const { control } = useFormContext()
 	return (
 		<>
